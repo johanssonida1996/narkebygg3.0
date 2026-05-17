@@ -1,7 +1,6 @@
 <?php
-declare(strict_types=1);
 
-function redirect_with_status(string $status): never
+function redirect_with_status($status)
 {
     header('Location: index.html?form=' . rawurlencode($status) . '#kontakt');
     exit;
@@ -11,50 +10,33 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect_with_status('error');
 }
 
-$honeypot = trim((string)($_POST['company'] ?? ''));
-if ($honeypot !== '') {
-    redirect_with_status('success');
-}
-
-$name = trim((string)($_POST['name'] ?? ''));
-$email = trim((string)($_POST['email'] ?? ''));
-$phone = trim((string)($_POST['phone'] ?? ''));
-$message = trim((string)($_POST['message'] ?? ''));
-$source = trim((string)($_POST['form_source'] ?? 'Kontaktformulär'));
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
 if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     redirect_with_status('invalid');
 }
 
-$to = 'ida@narkebygg.se';
+$to = 'info@narkebygg.se';
+$from = 'ida@narkebygg.se';
 $subject = 'Förfrågan från narkebygg.se';
-$safeName = preg_replace('/[\r\n]+/', ' ', $name) ?: 'Besökare';
-$safeEmail = preg_replace('/[\r\n]+/', '', $email) ?: '';
-$safePhone = preg_replace('/[\r\n]+/', ' ', $phone) ?: '-';
 
-$bodyLines = [
-    'Nytt meddelande från kontaktformuläret på narkebygg.se',
-    '',
-    'Källa: ' . $source,
-    'Namn: ' . $safeName,
-    'E-post: ' . $safeEmail,
-    'Telefon: ' . $safePhone,
-    '',
-    'Beskrivning av projekt:',
-    $message,
-];
+$body =
+    "Nytt meddelande från kontaktformuläret på narkebygg.se\n\n" .
+    "Namn: $name\n" .
+    "E-post: $email\n" .
+    "Telefon: $phone\n\n" .
+    "Beskrivning av projekt:\n$message";
 
-$body = implode(PHP_EOL, $bodyLines);
+$headers =
+    "MIME-Version: 1.0\r\n" .
+    "Content-Type: text/plain; charset=UTF-8\r\n" .
+    "From: Närke Bygg <$from>\r\n" .
+    "Reply-To: $email\r\n";
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'From: Närke Bygg <info@narkebygg.se>',
-    'Reply-To: ' . $safeName . ' <' . $safeEmail . '>',
-    'X-Mailer: PHP/' . phpversion(),
-];
-
-$sent = mail($to, $subject, $body, implode("\r\n", $headers));
+$sent = mail($to, $subject, $body, $headers);
 
 if (!$sent) {
     redirect_with_status('error');
