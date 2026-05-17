@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
   --white: #fff;
-  --black: #fff;
+  --black: #14110f;
   --radius-sm: 10px;
   --radius: 18px;
   --radius-lg: 28px;
@@ -20,13 +20,12 @@
 
 [data-theme=light] {
   --bg: #f4efe7;
-  --surface: #ffff;
+  --surface: #ffffff;
   --ink: #14110f;
   --ink-soft: #3a3531;
   --muted: #5f554d;
   --line: rgba(20, 17, 15, 0.1);
   --dark: #344a5f;
-  --on-dark: #14110f;
   --on-dark-mute: rgba(255, 255, 255, 0.78);
   --on-dark: #fff;
 }
@@ -39,7 +38,6 @@
   --muted: #f4efe7;
   --line: rgba(255, 236, 223, 0.1);
   --dark: #344a5f;
-  --on-dark: #14110f;
   --on-dark-mute: rgba(255, 255, 255, 0.78);
   --on-dark: #fff;
 }
@@ -582,14 +580,14 @@ h3 {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.9rem;
 }
-.hero__meta a::before {
-  content: "\f16d";
-  font-family: "Font Awesome 6 Brands", var(--font);
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0;
+.hero__meta .hero__meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: #fff;
-  line-height: 1.2;
+}
+.hero__meta .hero__meta-link i {
+  font-size: 1.35rem;
 }
 
 .hiring-banner {
@@ -651,15 +649,10 @@ h3 {
   transition: transform var(--t) var(--ease);
 }
 .hiring-banner__arrow {
+  display: inline-flex;
+  align-items: center;
   transition: transform var(--t) var(--ease);
-}
-.hiring-banner__arrow::after {
-  content: "\f178";
-  font-family: "Font Awesome 6 Free", var(--font);
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  color: var(--white);
   line-height: 1.2;
 }
 .hiring-banner:hover .hiring-banner__arrow {
@@ -677,6 +670,23 @@ h3 {
     box-shadow: 0 0 0 0 rgba(200, 105, 58, 0);
   }
 }
+.btn__arrow {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.btn__arrow--dark {
+  color: var(--dark);
+}
+
+.btn:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
 .services-grid {
   display: grid;
   gap: 1.25rem;
@@ -1078,20 +1088,20 @@ h3 {
   opacity: 0.7;
 }
 .site-footer__inner .social-media {
-  color: var(--muted);
   font-size: 0.88rem;
-  display: flex;
+}
+.site-footer__inner .social-media a {
+  color: var(--muted);
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
-.site-footer__inner .social-media a::before {
-  content: "\f16d";
-  font-family: "Font Awesome 6 Brands", var(--font);
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0;
+.site-footer__inner .social-media i {
+  font-size: 1.35rem;
+}
+.site-footer__inner .social-media svg {
+  height: 2em;
   color: var(--muted);
-  line-height: 1.2;
 }
 
 .reveal {
@@ -1116,101 +1126,6 @@ h3 {
     transform: none;
   }
 }
-.site-header {
-  padding-block: 1.3rem;
-}
-.site-header.is-scrolled {
-  background: color-mix(in oklab, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(140%) blur(14px);
-  box-shadow: 0 1px 0 var(--line);
-  padding-block: 0.8rem;
-}
-
-.header__cta {
-  display: none !important;
-}
-
-.brand__logo {
-  width: 50px;
-}
-
-.brand--footer .brand__logo {
-  width: 72px;
-}
-
-.nav__list {
-  gap: 2.4rem;
-}
-.nav__list li a {
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: rgba(255, 255, 255, 0.92);
-  padding: 0.35rem 0;
-}
-
-.site-header.is-scrolled .nav__list li a {
-  color: var(--ink-soft);
-}
-
-.nav__list li a:hover {
-  color: #ffffff;
-}
-
-.site-header.is-scrolled .nav__list li a:hover {
-  color: var(--ink);
-}
-
-.theme-toggle {
-  width: 48px;
-  height: 48px;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.34);
-}
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-.theme-toggle .icon-sun {
-  display: none;
-}
-.theme-toggle .icon-moon {
-  display: block;
-}
-
-[data-theme=dark] .theme-toggle .icon-sun {
-  display: block;
-}
-
-[data-theme=dark] .theme-toggle .icon-moon {
-  display: none;
-}
-
-.site-header.is-scrolled .theme-toggle {
-  color: var(--ink);
-  border-color: var(--line);
-}
-.site-header.is-scrolled .theme-toggle:hover {
-  background: var(--bg-elev);
-}
-
-.site-header.is-scrolled .hamburger {
-  color: var(--ink);
-  border-color: var(--line);
-}
-
-.hero__title {
-  line-height: 1.35;
-}
-
-.hero__actions .btn--primary {
-  background: #ffffff;
-  color: #14110f;
-}
-.hero__actions .btn--ghost:hover {
-  background: transparent;
-  color: #ffffff;
-}
-
 .btn {
   box-shadow: none;
 }
@@ -1239,30 +1154,6 @@ h3 {
 .btn:hover .btn__label::after {
   transform: scaleX(1);
   transform-origin: left;
-}
-
-.btn__arrow {
-  text-decoration: none;
-}
-.btn__arrow::after {
-  content: "\f178";
-  font-family: "Font Awesome 6 Free", var(--font);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  color: var(--white);
-  line-height: 1.2;
-}
-
-.btn__arrow--dark {
-  color: var(--dark);
-}
-.btn__arrow--dark::after {
-  color: var(--dark);
-}
-
-.btn:hover .btn__arrow {
-  transform: translateX(4px);
 }
 
 .hiring-banner {
