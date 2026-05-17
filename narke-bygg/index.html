@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Närke Bygg</title>
+  <meta name="description" content="Närke Bygg är ett lokalt byggföretag i Örebro län." />
+  <meta name="theme-color" content="#f9f8f5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a href="#top" class="brand" aria-label="Närke Bygg - startsida">
+        <img src="images/logo.webp" alt="Närke Bygg" class="brand__logo brand__logo--default" />
+        <img src="images/logo-white.webp" alt="Närke Bygg" class="brand__logo brand__logo--light" />
+      </a>
+
+      <nav class="nav" aria-label="Huvudmeny">
+        <ul class="nav__list">
+          <li><a href="#tjanster">Tjänster</a></li>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#jobba">Jobba hos oss</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Växla tema" title="Växla tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#kontakt" class="btn btn--primary btn--sm header__cta"><span class="btn__label">Kontakta oss</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul>
+        <li><a href="#tjanster">Tjänster</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#jobba">Jobba hos oss</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__media">
+        <img src="images/hero-modern.webp" alt="Modernt husprojekt i kvällsljus" />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light reveal">Byggföretag i Örebro län</p>
+        <h1 class="hero__title reveal">Trygga byggprojekt<br/>från start till klart.</h1>
+        <p class="hero__lead reveal">Närke Bygg hjälper privatpersoner och företag med renovering, ombyggnation och entreprenad i Örebro län.</p>
+        <div class="hero__actions reveal">
+          <a href="#kontakt" class="btn btn--primary"><span class="btn__label">Begär offert</span></a>
+          <a href="#om" class="btn btn--ghost"><span class="btn__label">Om Närke Bygg</span> <span class="btn__arrow" aria-hidden="true"></span></a>
+        </div>
+
+        <a href="#jobba" class="hiring-banner reveal" aria-label="Vi söker snickare">
+          <span class="hiring-banner__text">Vi söker snickare</span>
+          <span class="hiring-banner__arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="hero__meta container">
+        <div><strong>15+</strong><span>års erfarenhet</span></div>
+        <div><strong>200+</strong><span>genomförda projekt</span></div>
+        <div><strong><a href="https://www.instagram.com/narkebyggab/"></a></strong><span>Följ oss på Instagram</span></div>
+      </div>
+    </section>
+
+    <section class="section section--services" id="tjanster">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow reveal">Tjänster</p>
+          <h2 class="section__title reveal">Byggt med kvalitet.<br/>Utfört med omtanke.</h2>
+          <p class="section__lead reveal">Vi hjälper privatpersoner och företag med allt från renoveringar till totalentreprenad.</p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <h3>Renovering</h3>
+            <p>Vi hjälper er att förnya hemmet – från mindre renoveringar till kompletta helhetslösningar.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Ombyggnation</h3>
+            <p>Smarta ombyggnationer och planlösningar anpassade efter ert hem och era behov.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Kök &amp; badrum</h3>
+            <p>Kök och badrum med fokus på kvalitet, funktion och hållbara materialval.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Tak &amp; fasad</h3>
+            <p>Hållbara lösningar som skyddar huset och förbättrar helhetsintrycket.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Totalentreprenad</h3>
+            <p>Ett tryggt helhetsansvar genom hela projektet – från planering till färdigt resultat.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Snickeri</h3>
+            <p>Platsbyggda lösningar och specialsnickerier med känsla för detaljer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--about" id="om">
+      <div class="container about">
+        <div class="about__text">
+          <p class="eyebrow reveal">Om Närke Bygg</p>
+          <h2 class="section__title reveal">Litet företag.<br/>Stort engagemang.</h2>
+          <p class="reveal">Närke Bygg är ett lokalt byggföretag i Örebro län med fokus på kvalitet, kommunikation och trygga byggprojekt.</p>
+          <p class="reveal">Vi är ett mindre team med nära kundkontakt genom hela processen – från första mötet till färdigt resultat. För oss handlar bra hantverk om att göra jobbet ordentligt, hålla det vi lovar och lämna efter oss något vi kan vara stolta över.</p>
+
+          <ul class="about__pillars">
+            <li class="reveal"><strong>Lokala</strong><span>Vi finns i Örebro län och känner området, leverantörerna och förutsättningarna.</span></li>
+            <li class="reveal"><strong>Personliga</strong><span>Hos oss får du nära kontakt och tydlig kommunikation genom hela projektet.</span></li>
+            <li class="reveal"><strong>Pålitliga</strong><span>Vi håller tider, följer upp och strävar alltid efter ett resultat du kan känna dig trygg med.</span></li>
+            <li class="reveal"><strong>Kvalitet</strong><span>Noggrant utfört arbete med hållbara material och känsla för detaljer.</span></li>
+          </ul>
+        </div>
+        <div class="about__image reveal">
+          <img src="images/about-new.webp" alt="Byggprojekt i trästomme under uppförande" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--recruit section--dark" id="jobba">
+      <div class="container recruit">
+        <div class="recruit__image reveal">
+          <img src="images/recruitment-new.webp" alt="Två hantverkare från Närke Bygg arbetar på byggarbetsplats" loading="lazy" />
+          <span class="recruit__tag">Vi anställer</span>
+        </div>
+        <div class="recruit__text">
+          <p class="eyebrow eyebrow--light reveal">Karriär</p>
+          <h2 class="section__title section__title--light reveal">Jobba hos oss.</h2>
+          <p class="reveal">Vi söker engagerade snickare som vill bli en del av ett lokalt byggföretag där kvalitet och yrkesstolthet står i fokus.</p>
+          <ul class="recruit__list">
+            <li class="reveal">Trygg anställning med kollektivavtal</li>
+            <li class="reveal">Korta beslutsvägar och nära samarbete</li>
+            <li class="reveal">Varierande projekt</li>
+            <li class="reveal">Ett team som bryr sig om varandra</li>
+          </ul>
+          <a href="mailto:info@narkebygg.se" class="btn btn--light reveal"><span class="btn__label">Skicka in intresseanmälan</span> <span class="btn__arrow btn__arrow--dark" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--testimonials">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow reveal">Kundord</p>
+          <h2 class="section__title reveal">Det här säger våra kunder.</h2>
+        </header>
+        <div class="testimonials">
+          <figure class="testimonial reveal">
+            <i class="fa-solid fa-quote-left testimonial__icon" aria-hidden="true"></i>
+            <blockquote>Jag kan varmt rekommendera Närke bygg eftersom de har fantastiskt bra service och levererar alltid i tid. Ska jag bygga om i framtiden kommer jag garanterat ringa Närke bygg.</blockquote>
+            <figcaption><strong>Arne Svensson</strong><span>Glanshammar</span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <i class="fa-solid fa-quote-left testimonial__icon" aria-hidden="true"></i>
+            <blockquote>Vilket gäng, hade kanonbra snickare hos oss. Lyhörda och oerhört effektiva. Jag kommer definitivt att rekommendera Närke Bygg till andra som jag känner som behöver liknande hjälp.</blockquote>
+            <figcaption><strong>Anders Andersson</strong><span>Örebro</span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <i class="fa-solid fa-quote-left testimonial__icon" aria-hidden="true"></i>
+            <blockquote>Närke bygg är mycket trevliga mot sina kunder och varje gång har jag fått hjälp direkt utan att behöva vänta en längre stund. De utstrålar kvalitet och bra företagande.</blockquote>
+            <figcaption><strong>Berit Bengtsson</strong><span>Kumla</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact section--dark" id="kontakt">
+      <div class="container contact">
+        <div class="contact__intro">
+          <p class="eyebrow eyebrow--light reveal">Kontakt</p>
+          <h2 class="section__title section__title--light reveal">Låt oss bygga något bra tillsammans.</h2>
+          <p class="reveal">Berätta om ditt projekt - vi återkommer med nästa steg.</p>
+
+          <ul class="contact__details">
+            <li class="reveal"><span>Telefon</span><a href="tel:+46705276770">070 527 67 70</a></li>
+            <li class="reveal"><span>E-post</span><a href="mailto:info@narkebygg.se">info@narkebygg.se</a></li>
+            <li class="reveal"><span>Plats</span><span>Kumla, Örebro län</span></li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" action="send-mail.php" method="post" accept-charset="UTF-8">
+          <input type="hidden" name="form_source" value="narkebygg.se kontaktformulär" />
+          <div style="display:none;">
+            <label for="company">Lämna detta fält tomt</label>
+            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="name">Namn</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="message">Beskriv ditt projekt</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block"><span class="btn__label">Skicka förfrågan</span> <span class="btn__arrow btn__arrow--dark" aria-hidden="true"></span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="#top" class="brand brand--footer" aria-label="Närke Bygg">
+        <img src="images/logo.webp" alt="Närke Bygg" class="brand__logo brand__logo--default" />
+        <img src="images/logo-white.webp" alt="Närke Bygg" class="brand__logo brand__logo--light" />
+      </a>
+      <p>&copy; <span id="year"></span> Närke Bygg AB · Örebro län · Org.nr 556000-0000</p>
+     <span class="social-media"><a href="https://www.instagram.com/narkebyggab/"></a>Följ oss på instagram</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
+
+
